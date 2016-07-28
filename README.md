@@ -28,6 +28,8 @@ Dependencies
 
 Usage
 -----
+```html
   <cubic-color-picker></cubic-color-picker>
+```
 
 ![preview](http://puu.sh/q44zS/5e0e96c2e0.png)
