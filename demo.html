@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>CubicColorPicker</title>
+    <style>
+      .container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+    <link rel="stylesheet" href="node_modules/cubicColorPicker/dist/css/cubicColorPicker.css">
+
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/cubicColorPicker/dist/js/cubicColorPicker.js"></script>
+    <script src="node_modules/angular/angular.min.js"></script>
+    <script src="node_modules/gsap/src/minified/TimelineMax.min.js"></script>
+    <script src="node_modules/gsap/src/minified/TweenMax.min.js"></script>
+    <script src="node_modules/gsap/src/minified/utils/Draggable.min.js"></script>
+    <script src="dist/js/angularCubicColorPicker.js"></script>
+  </head>
+  <body ng-app="app">
+    <div class="container">
+      <cubic-color-picker></cubic-color-picker>
+    </div>
+    <script>
+      angular.module('app', ['cubicColorPicker']);
+    </script>
+  </body>
+</html>
