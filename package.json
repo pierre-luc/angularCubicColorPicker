@@ -1,11 +1,11 @@
 {
   "name": "angularCubicColorPicker",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "A 3D color picker",
   "main": "gulpfile.js",
   "dependencies": {
     "angular": "^1.5.8",
-    "cubicColorPicker": "0.0.5",
+    "cubicColorPicker": "^0.1.0",
     "gsap": "^1.18.5",
     "gulp-task": "^2.0.5"
   },

@@ -29,7 +29,12 @@ Dependencies
 Usage
 -----
 ```html
-  <cubic-color-picker></cubic-color-picker>
+  <cubic-color-picker onchange="functionOfScope"></cubic-color-picker>
 ```
 
+```javascript
+scope.functionOfScope = function(newColor){
+  ...
+}
+```
 ![preview](http://puu.sh/q44zS/5e0e96c2e0.png)

@@ -14,6 +14,12 @@
         justify-content: center;
         align-items: center;
       }
+        .container > .value {
+          position: absolute;
+          top: 100px;
+          height: 50px;
+          font-size: 30px;
+        }
     </style>
     <link rel="stylesheet" href="node_modules/cubicColorPicker/dist/css/cubicColorPicker.css">
 
@@ -26,11 +32,21 @@
     <script src="dist/js/angularCubicColorPicker.js"></script>
   </head>
   <body ng-app="app">
-    <div class="container">
-      <cubic-color-picker></cubic-color-picker>
+    <div class="container" ng-controller="demo">
+      <input type="text" class="value" ng-model="color">
+      <cubic-color-picker onchange="updateColor"></cubic-color-picker>
     </div>
     <script>
-      angular.module('app', ['cubicColorPicker']);
+      angular.module('app', ['cubicColorPicker'])
+        .controller('demo', function($scope, $timeout){
+          $scope.color = null;
+
+          $scope.updateColor = function(color){
+            $timeout(function(){
+              $scope.color = color;
+            }, 1);
+          }
+        })
     </script>
   </body>
 </html>
