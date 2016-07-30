@@ -4,7 +4,12 @@ angular.module('cubicColorPicker', [])
       restrict: 'E',
       replace: true,
       scope: {
-        onchange: '=onchange'
+        model: '=bind'
+      },
+      controller: function($timeout, $scope){
+        $scope.update = function(){
+          $timeout(function(){}, 1);
+        }
       },
       compile: function compile(tElement, tAttrs, transclude) {
           return {
@@ -14,10 +19,10 @@ angular.module('cubicColorPicker', [])
                   for(var k in iElement){
                       if ("object" === typeof iElement[k]){
                         var picker = new CubicColorPicker(iElement[k]);
-
-                        if (typeof scope.onchange === "function"){
+                        if (typeof scope.model !== "undefined"){
                           angular.element(picker).on('colorHasChanged', function(){
-                            scope.onchange(picker.getColor());
+                            scope.model = picker.getColor();
+                            scope.update();
                           })
                         }
                       }
