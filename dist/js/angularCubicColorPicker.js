@@ -4,7 +4,8 @@ angular.module('cubicColorPicker', [])
       restrict: 'E',
       replace: true,
       scope: {
-        model: '=bind'
+        model: '=bind',
+        onchange: '=onchange'
       },
       controller: function($timeout, $scope){
         $scope.update = function(){
@@ -23,6 +24,11 @@ angular.module('cubicColorPicker', [])
                           angular.element(picker).on('colorHasChanged', function(){
                             scope.model = picker.getColor();
                             scope.update();
+                          })
+                        }
+                        if (typeof scope.onchange === 'function'){
+                          angular.element(picker).on('colorHasChanged', function(){
+                            scope.onchange(picker.getColor());
                           })
                         }
                       }

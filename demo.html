@@ -34,7 +34,7 @@
   <body ng-app="app">
     <div class="container" ng-controller="demo">
       <input type="text" class="value" ng-model="color">
-      <cubic-color-picker bind="color"></cubic-color-picker>
+      <cubic-color-picker bind="color" onchange="updateColor"></cubic-color-picker>
     </div>
     <script>
       angular.module('app', ['cubicColorPicker'])
